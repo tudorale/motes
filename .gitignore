@@ -10,6 +10,7 @@
 
 # production
 /build
+**/Firebase.tsx
 
 # misc
 .DS_Store
