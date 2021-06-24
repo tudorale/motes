@@ -9,6 +9,4 @@ I think there is probably a lot of website that are similar to my idea but I wan
 At the moment the coding process didn't started for personal reasons but at any time I will start code the website with a simple design and easy to use for everyone. I am willing to use React JS with Typescript and Firebase to store the data (your notes).
 
 ### Motes 6/21/2021:
- - Processing the idea
  - Website not started
- - Firebase not initiated 
