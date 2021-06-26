@@ -42,5 +42,12 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@types/react-helmet": "^6.1.1",
+    "@types/react-router-dom": "^5.1.7",
+    "gh-pages": "^3.2.3",
+    "react-helmet": "^6.1.0",
+    "react-lazy": "^1.1.0"
   }
 }
