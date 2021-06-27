@@ -1,0 +1,36 @@
+@import "variables";
+
+.navbar{
+    width: 100%;
+    position: absolute;
+    top: 0;
+    .logo{
+        color: white;
+        position: absolute;
+        padding: 10px;
+        font-weight: 600;
+        margin-left: 20px;
+        span{
+            color: $main-color;
+        }
+    }
+    ul{
+        width: 240px;
+        position: absolute;
+        right: 0;
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        font-size: 1.2rem;
+        padding: 10px;
+        padding-top: 17px;
+        margin-right: 25px;
+        li a{
+            color: white;
+            transition: all 300ms linear;
+            text-decoration: none;
+            &:hover{color: $main-color;}
+        }
+    }
+}
