@@ -5,7 +5,7 @@
   top: 0;
 }
 
-.navbar .logo {
+.navbar a .logo {
   color: white;
   position: absolute;
   padding: 10px;
@@ -13,7 +13,7 @@
   margin-left: 20px;
 }
 
-.navbar .logo span {
+.navbar a .logo span {
   color: #5900ff;
 }
 
@@ -68,6 +68,47 @@
 .footer p a {
   color: #742aff;
   text-decoration: none;
+}
+
+.moteWrapper .moteContent {
+  color: white;
+  position: relative;
+  top: 80px;
+  left: 25px;
+  width: 800px;
+}
+
+.moteWrapper .moteContent h1 {
+  font-size: 1.55rem;
+  font-weight: 500;
+}
+
+.moteWrapper .moteContent p {
+  margin: 15px 0px;
+  font-size: 1.1rem;
+}
+
+.moteWrapper .moteContent .moteInfo {
+  margin-top: 50px;
+  position: fixed;
+  left: 25px;
+  top: auto;
+  right: auto;
+  bottom: 50px;
+  width: 800px;
+  z-index: 999;
+}
+
+.moteWrapper .moteContent .moteInfo h1 {
+  font-size: 1.35rem;
+}
+
+.moteWrapper .moteContent .moteInfo p {
+  font-size: 1.1rem;
+}
+
+.moteWrapper .moteContent .moteInfo p span {
+  color: #5900ff;
 }
 
 * {

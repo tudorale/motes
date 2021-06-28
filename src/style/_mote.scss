@@ -1,0 +1,33 @@
+.moteWrapper{
+    .moteContent{
+        color: white;
+        position: relative;
+        top: 80px;
+        left: 25px;
+        width: 800px;
+        h1{
+            font-size: 1.55rem;
+            font-weight: 500;
+        }
+        p{
+            margin: 15px 0px;
+            font-size: 1.1rem;
+            position: relative;
+
+        }
+
+        .moteInfo{
+            position: relative;
+            top: 20px;
+            h1{
+                font-size: 1.35rem;
+            }
+            p{
+                font-size: 1.1rem;
+                span{
+                    color: $main-color;
+                }
+            }
+        }
+    }
+}

@@ -66,7 +66,7 @@ function Main() {
                 }else{
                     const moteData = {
                         title: "This is a new mote, you can edit this title by clicking it.",
-                        creationTime: firebase.firestore.FieldValue.serverTimestamp(),
+                        creationTime: new Date(firebase.firestore.Timestamp.now().seconds*1000).toLocaleDateString(),
                         notes: ``,
                     }
 

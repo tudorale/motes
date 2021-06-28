@@ -2,6 +2,7 @@ import React, {Suspense} from 'react';
 import "./style/css/main.css";
 import { HashRouter as Router, Route, Switch } from "react-router-dom";
 import Main from "./components/Main"
+import Mote from "./components/Mote"
 
 function App() {
   
@@ -11,6 +12,7 @@ function App() {
         <Router>
           <Switch>
             <Route path="/" exact component={Main} />
+            <Route path="/mote/:key" exact component={Mote} />
           </Switch>
         </Router>
       </div>
