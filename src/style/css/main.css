@@ -49,6 +49,27 @@
   color: #5900ff;
 }
 
+.footer {
+  color: #b4b4b4;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0 25px;
+  padding-bottom: 10px;
+}
+
+.footer p a {
+  color: #742aff;
+  text-decoration: none;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -109,7 +130,10 @@ body {
   cursor: pointer;
   border-radius: 3px;
   outline: none;
+  -webkit-transition: all 200ms linear;
+  transition: all 200ms linear;
   padding-left: 10px;
+  padding-top: 15px;
   font-size: 1rem;
   color: white;
   background: #13112e;
@@ -117,8 +141,10 @@ body {
 
 .main .content form .inputField label {
   position: relative;
-  top: 32px;
-  color: #e4e4e4;
+  top: 31px;
+  color: #b4b4b4;
+  -webkit-transition: all 200ms linear;
+  transition: all 200ms linear;
   left: 10px;
 }
 
