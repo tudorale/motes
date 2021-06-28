@@ -3,6 +3,7 @@ import Navbar from './subcomponent/Navbar'
 import "../style/css/main.css";
 import Footer from './subcomponent/Footer';
 import {useHistory} from "react-router-dom"
+import {db} from "./services/Firebase";
 
 function Main() {
     const [key, setKey] = useState<string>("");
@@ -17,11 +18,9 @@ function Main() {
           i.style.height = "55px";
           l.style.fontSize = ".9rem";
         }
-      };
-    
-      
-    
-      const handleBlur = (label: string, input: string): void => {
+    };
+       
+    const handleBlur = (label: string, input: string): void => {
         let l = document.querySelector<HTMLElement>(`${label}`)!;
         let i = document.querySelector(`${input}`) as HTMLInputElement;
         if (l) {
@@ -33,7 +32,47 @@ function Main() {
             return;
           }
         }
-      };
+    };
+
+    const handleChange = (e: any) => {
+        setKey(e.target.value);
+        setStatus("");
+    }
+
+    const handleMote = (e:any) => {
+        e.preventDefault();
+        if(key.length > 10){
+            setStatus("The key should have less than 10 characters.")
+        }else if(key.length < 5){
+            setStatus("The key should have more than 5 characters.")
+        }else if(key.length >= 5 && key.length <= 10){
+            // get the motes from database
+            const motes: string[] = [];
+
+            db.collection("motes").get().then((data) => {
+                data.forEach(doc => {
+                    motes.push(doc.id);
+                })
+            }).then(() => {
+                for(let i = 0; i < motes.length; i++){
+                   if(key === motes[i]){
+                       history.push(`/mote/${motes[i]}`)
+                   }else{
+                        const moteData = {
+                            title: "This is a new mote, you can edit this title by clicking it.",
+                            
+                        }
+
+                        db.collection("motes").doc(key).set(moteData).then(() => {
+                            setStatus("You will be redirected to the mote.")
+                            history.push(`/mote/${key}`)
+                        })
+                   }
+                }
+            })
+ 
+        }
+    }
 
     return (
         <div className="main">
@@ -41,10 +80,10 @@ function Main() {
 
             <div className="content">
                 <h1>Join or create a mote</h1>
-                <form>
+                <form onSubmit={(e) => handleMote(e)}>
                     <div className="inputField">
                         <label htmlFor="key" id="keylabel">Mote Key</label>
-                        <input type="text" id="key" maxLength={10} minLength={5} value={key} onChange={e => setKey(e.target.value)} onFocus={() => handleFocus("#keylabel", "#key")} onBlur={() => handleBlur("#keylabel", "#key")}/>
+                        <input type="text" id="key" maxLength={10} minLength={5} value={key} onChange={e => handleChange(e)} onFocus={() => handleFocus("#keylabel", "#key")} onBlur={() => handleBlur("#keylabel", "#key")}/>
                     </div>
                     <button>Join/Create Mote <span>*</span></button>
                 </form>

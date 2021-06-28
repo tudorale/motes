@@ -65,14 +65,17 @@ body{
                 font-size: 1.1rem;
                 cursor: pointer;
                 transition: all 300ms linear;
+                margin-bottom: 15px;
                 &:hover{
                     background-color: $main-color-hover;
                 }
             }
         }
         p{
-            margin-top: 10px;
             font-size: 1.05rem;
+        }
+        .status{
+            margin-bottom: 10px;
         }
         .note{
             color: $grey-color;
