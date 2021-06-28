@@ -4,10 +4,12 @@ import "../style/css/main.css";
 import Footer from './subcomponent/Footer';
 import {useHistory} from "react-router-dom"
 import {db} from "./services/Firebase";
+import firebase from "firebase/app";
 
 function Main() {
     const [key, setKey] = useState<string>("");
     const [status, setStatus] = useState<string>("");
+    const [buttonStatus, setButtonStatus] = useState<string>("Join/Create a Mote");
     const history = useHistory();
 
     const handleFocus = (label: string, input: string): void => {
@@ -41,6 +43,7 @@ function Main() {
 
     const handleMote = (e:any) => {
         e.preventDefault();
+        
         if(key.length > 10){
             setStatus("The key should have less than 10 characters.")
         }else if(key.length < 5){
@@ -49,26 +52,32 @@ function Main() {
             // get the motes from database
             const motes: string[] = [];
 
+            setButtonStatus("Loading...");
+            let btn = document.querySelector("#actionButton") as HTMLButtonElement;
+            btn.setAttribute("disabled", "");
+
             db.collection("motes").get().then((data) => {
                 data.forEach(doc => {
                     motes.push(doc.id);
                 })
             }).then(() => {
-                for(let i = 0; i < motes.length; i++){
-                   if(key === motes[i]){
-                       history.push(`/mote/${motes[i]}`)
-                   }else{
-                        const moteData = {
-                            title: "This is a new mote, you can edit this title by clicking it.",
-                            
-                        }
+                if(motes.includes(key)){
+                    history.push(`/mote/${key}`)
+                }else{
+                    const moteData = {
+                        title: "This is a new mote, you can edit this title by clicking it.",
+                        creationTime: firebase.firestore.FieldValue.serverTimestamp(),
+                        notes: ``,
+                    }
 
-                        db.collection("motes").doc(key).set(moteData).then(() => {
-                            setStatus("You will be redirected to the mote.")
-                            history.push(`/mote/${key}`)
-                        })
-                   }
+                    db.collection("motes").doc(key).set(moteData).then(() => {
+                        setStatus("You will be redirected to the mote.")
+                        history.push(`/mote/${key}`)
+                    })
                 }
+            }).catch(() => {
+                setButtonStatus("Join/Create a Mote *");
+                btn.removeAttribute("disabled");
             })
  
         }
@@ -85,7 +94,7 @@ function Main() {
                         <label htmlFor="key" id="keylabel">Mote Key</label>
                         <input type="text" id="key" maxLength={10} minLength={5} value={key} onChange={e => handleChange(e)} onFocus={() => handleFocus("#keylabel", "#key")} onBlur={() => handleBlur("#keylabel", "#key")}/>
                     </div>
-                    <button>Join/Create Mote <span>*</span></button>
+                    <button id="actionButton">{buttonStatus}</button>
                 </form>
                 <p className="status">{status}</p>
                 <p className="note">* If a mote with that key doesn't exist, it will create one, if it exists it will join the mote.</p>
