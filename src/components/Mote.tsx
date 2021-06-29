@@ -10,6 +10,7 @@ function Mote(props: any) {
     const [title, setTitle] = useState<string>("");
     const [creationTime, setCreationTime] = useState<string>("");
     const [notes, setNotes] = useState<string>(``);
+    const [localKey, setLocalKey] = useState<string>(key)
 
     useEffect(() => {
 
@@ -29,6 +30,10 @@ function Mote(props: any) {
         setNotes(e.target.value)
     }
 
+    const handleKey = (e: any) => {
+        setLocalKey(e.target.value)
+    }
+
     return (
         <>
             <Helmet>
@@ -43,7 +48,7 @@ function Mote(props: any) {
                     <textarea value={notes} id="notes" onChange={e => handleNotes(e)}></textarea>
                     <div className="moteInfo">
                         <h1>Your Mote</h1>
-                        <p>Key: <span>{key}</span></p>
+                        <p>Key: <input type="text" value={localKey} onChange={e => handleKey(e)} id="key" maxLength={10} minLength={5} /></p>
                         <p>Creation Time: <span>{creationTime}</span></p>
                         <p>To share your notes with someone you have to give them your Mote Key, also, the key matters, anyone can view your notes if they know your key.</p>
                     </div>
