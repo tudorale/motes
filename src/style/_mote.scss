@@ -5,14 +5,25 @@
         top: 80px;
         left: 25px;
         width: 800px;
-        #title{
-            border: none;
-            outline: none;
-            color: white;
-            background: none;
-            font-size: 2rem;
-            font-weight: 500;
-            width: 100%;
+        .titleWrapper {
+            display: flex;
+            #title{
+                border: none;
+                outline: none;
+                color: white;
+                background: none;
+                font-size: 2rem;
+                font-weight: 500;
+                width: 100%;
+                margin-right: 15px;
+            }
+
+            svg{
+                fill: white;
+                position: relative;
+                top: 5px;
+                cursor: pointer;
+            }
         }
 
         #notes{
@@ -55,24 +66,39 @@
         .moteInfo{
             position: relative;
             top: 20px;
+            padding-bottom: 20px;
             h1{
                 font-size: 1.35rem;
                 font-weight: 500;
             }
             p{
                 font-size: 1.1rem;
+                position: relative;
+                display: flex;
                 span{
                     color: $main-color;
+                    margin-left: 5px;
                 }
                 input{
                     border: none;
                     outline: none;
                     color: $main-color;
                     background: none;
-                    width: 100px;
+                    width: 100%;
                     font-size: 1.1rem;
+                    margin-left: 5px;
+                    margin-right: 15px;
+                }
+                svg{
+                    fill: white;
+                    width: 20px;
+                    height: 20px;
+                    position: relative;
+                    top: 0px;
+                    cursor: pointer;
                 }
             }
+            
         }
     }
 }

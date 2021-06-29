@@ -78,7 +78,13 @@
   width: 800px;
 }
 
-.moteWrapper .moteContent #title {
+.moteWrapper .moteContent .titleWrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.moteWrapper .moteContent .titleWrapper #title {
   border: none;
   outline: none;
   color: white;
@@ -86,6 +92,14 @@
   font-size: 2rem;
   font-weight: 500;
   width: 100%;
+  margin-right: 15px;
+}
+
+.moteWrapper .moteContent .titleWrapper svg {
+  fill: white;
+  position: relative;
+  top: 5px;
+  cursor: pointer;
 }
 
 .moteWrapper .moteContent #notes {
@@ -127,6 +141,7 @@
 .moteWrapper .moteContent .moteInfo {
   position: relative;
   top: 20px;
+  padding-bottom: 20px;
 }
 
 .moteWrapper .moteContent .moteInfo h1 {
@@ -136,10 +151,15 @@
 
 .moteWrapper .moteContent .moteInfo p {
   font-size: 1.1rem;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .moteWrapper .moteContent .moteInfo p span {
   color: #5900ff;
+  margin-left: 5px;
 }
 
 .moteWrapper .moteContent .moteInfo p input {
@@ -147,8 +167,19 @@
   outline: none;
   color: #5900ff;
   background: none;
-  width: 100px;
+  width: 100%;
   font-size: 1.1rem;
+  margin-left: 5px;
+  margin-right: 15px;
+}
+
+.moteWrapper .moteContent .moteInfo p svg {
+  fill: white;
+  width: 20px;
+  height: 20px;
+  position: relative;
+  top: 0px;
+  cursor: pointer;
 }
 
 * {
