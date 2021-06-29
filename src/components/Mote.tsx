@@ -21,6 +21,14 @@ function Mote(props: any) {
         })
     }, [key])
 
+    const handleTitle = (e: any) => {
+        setTitle(e.target.value)
+    }
+
+    const handleNotes = (e: any) => {
+        setNotes(e.target.value)
+    }
+
     return (
         <>
             <Helmet>
@@ -29,18 +37,18 @@ function Mote(props: any) {
 
             <div className="moteWrapper">
                 <Navbar/>
-                    <div className="moteContent">
-                        <h1>{title}</h1>
-                        <p>{notes}</p>
 
-                        <div className="moteInfo">
-                            <h1>Your Mote</h1>
-                            <p>Key: <span>{key}</span></p>
-                            <p>Creation Time: <span>{creationTime}</span></p>
-                            <p>To share your notes with someone you have to give them your Mote Key, also, the key matters, anyone can view your notes if they know your key.</p>
-                        </div>
+                <div className="moteContent">
+                    <input type="text" value={title} onChange={e => handleTitle(e)} id="title" maxLength={35} />
+                    <textarea value={notes} id="notes" onChange={e => handleNotes(e)}></textarea>
+                    <div className="moteInfo">
+                        <h1>Your Mote</h1>
+                        <p>Key: <span>{key}</span></p>
+                        <p>Creation Time: <span>{creationTime}</span></p>
+                        <p>To share your notes with someone you have to give them your Mote Key, also, the key matters, anyone can view your notes if they know your key.</p>
                     </div>
-                <Footer />
+                </div>
+                
             </div>
         </>
     )

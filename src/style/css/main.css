@@ -78,29 +78,45 @@
   width: 800px;
 }
 
-.moteWrapper .moteContent h1 {
-  font-size: 1.55rem;
+.moteWrapper .moteContent #title {
+  border: none;
+  outline: none;
+  color: white;
+  background: none;
+  font-size: 2rem;
   font-weight: 500;
+  width: 100%;
+}
+
+.moteWrapper .moteContent #notes {
+  margin-top: 20px;
+  border: none;
+  outline: none;
+  color: white;
+  background: none;
+  font-size: 1.2rem;
+  width: 100%;
+  min-height: 300px;
+  height: auto;
+  padding-right: 10px;
+  max-width: 800px;
+  min-width: 800px;
 }
 
 .moteWrapper .moteContent p {
   margin: 15px 0px;
   font-size: 1.1rem;
+  position: relative;
 }
 
 .moteWrapper .moteContent .moteInfo {
-  margin-top: 50px;
-  position: fixed;
-  left: 25px;
-  top: auto;
-  right: auto;
-  bottom: 50px;
-  width: 800px;
-  z-index: 999;
+  position: relative;
+  top: 20px;
 }
 
 .moteWrapper .moteContent .moteInfo h1 {
   font-size: 1.35rem;
+  font-weight: 500;
 }
 
 .moteWrapper .moteContent .moteInfo p {

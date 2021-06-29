@@ -5,10 +5,44 @@
         top: 80px;
         left: 25px;
         width: 800px;
-        h1{
-            font-size: 1.55rem;
+        #title{
+            border: none;
+            outline: none;
+            color: white;
+            background: none;
+            font-size: 2rem;
             font-weight: 500;
+            width: 100%;
         }
+
+        #notes{
+            margin-top: 20px;
+            border: none;
+            outline: none;
+            color: white;
+            background: none;
+            font-size: 1.2rem;
+            width: 100%;
+            min-height: 300px;
+            height: auto;
+            padding-right: 10px;
+            max-width: 800px;
+            min-width: 800px;
+            // &::scrollbar{
+            //     width: 9px;
+            //     background-color: $grey-color;
+            //     border-radius: 10px;
+            //     height: 6px;
+            //   }
+              
+            // &::scrollbar-thumb{
+            //     width: 9px;
+            //     background-color: $main-color;
+            //     border-radius: 10px;
+            //     height: 6px;
+            // }
+        }
+
         p{
             margin: 15px 0px;
             font-size: 1.1rem;
@@ -21,6 +55,7 @@
             top: 20px;
             h1{
                 font-size: 1.35rem;
+                font-weight: 500;
             }
             p{
                 font-size: 1.1rem;
