@@ -98,6 +98,7 @@ function Main() {
                 </form>
                 <p className="status">{status}</p>
                 <p className="note">* If a mote with that key doesn't exist, it will create one, if it exists it will join the mote.</p>
+                <p className="note" style={{marginTop: "15px"}}>* Choose a complex key for the mote, everyone who has the key from your mote can edit the whole mote, even change the initial key.</p>
             </div>
 
             <Footer />
