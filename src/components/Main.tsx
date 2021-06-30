@@ -46,9 +46,9 @@ function Main() {
         
         if(key.length > 10){
             setStatus("The key should have less than 10 characters.")
-        }else if(key.length < 5){
-            setStatus("The key should have more than 5 characters.")
-        }else if(key.length >= 5 && key.length <= 10){
+        }else if(key.length < 4){
+            setStatus("The key should have more than 4 characters or just 4.")
+        }else if(key.length >= 4 && key.length <= 10){
             // get the motes from database
             const motes: string[] = [];
 
@@ -65,9 +65,9 @@ function Main() {
                     history.push(`/mote/${key}`)
                 }else{
                     const moteData = {
-                        title: "This is a new mote, you can edit this title by clicking it.",
+                        title: "Add a title for this new mote.",
                         creationTime: new Date(firebase.firestore.Timestamp.now().seconds*1000).toLocaleDateString(),
-                        notes: ``,
+                        notes: `Here you can type your notes, they are automatically saved.`,
                     }
 
                     db.collection("motes").doc(key).set(moteData).then(() => {
@@ -92,7 +92,7 @@ function Main() {
                 <form onSubmit={(e) => handleMote(e)}>
                     <div className="inputField">
                         <label htmlFor="key" id="keylabel">Mote Key</label>
-                        <input type="text" id="key" maxLength={10} minLength={5} value={key} onChange={e => handleChange(e)} onFocus={() => handleFocus("#keylabel", "#key")} onBlur={() => handleBlur("#keylabel", "#key")}/>
+                        <input type="text" id="key" maxLength={10} minLength={4} value={key} onChange={e => handleChange(e)} onFocus={() => handleFocus("#keylabel", "#key")} onBlur={() => handleBlur("#keylabel", "#key")}/>
                     </div>
                     <button id="actionButton">{buttonStatus}</button>
                 </form>
