@@ -189,6 +189,7 @@
   top: 90px;
   width: 90%;
   left: 25px;
+  padding-bottom: 30px;
 }
 
 .about h1 {
@@ -203,6 +204,13 @@
 
 .about .note {
   color: #b4b4b4;
+}
+
+@media only screen and (max-width: 550px) {
+  .about {
+    width: 95%;
+    left: 15px;
+  }
 }
 
 * {

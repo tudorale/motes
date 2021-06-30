@@ -3,6 +3,7 @@
     top: 90px;
     width:90%;
     left: 25px;
+    padding-bottom: 30px;
     h1{
         font-size: 1.8rem;
     }
@@ -13,5 +14,12 @@
     }
     .note{
         color: $grey-color;
+    }
+}
+
+@media only screen and (max-width: 550px){
+    .about{
+        width: 95%;
+        left: 15px;
     }
 }

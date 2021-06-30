@@ -16,7 +16,6 @@ function About() {
                 
                     <p className="note">Mote - we are using the word "mote" to refer to a room, a global place where you type your actual notes or something else.</p>
                 </div>
-            <Footer /> 
         </>
     )
 }
