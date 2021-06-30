@@ -15,7 +15,6 @@ function App() {
             <Route path="/" exact component={Main} />
             <Route path="/mote/:key" exact component={Mote} />
             <Route path="/about" exact component={About} />
-
           </Switch>
         </Router>
       </div>

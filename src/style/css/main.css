@@ -82,13 +82,16 @@
 @media only screen and (max-width: 550px) {
   .footer {
     padding: 0 10px;
-    padding-bottom: 10px;
     padding-top: 30px;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
     height: 70px;
+    margin-bottom: 15px;
+  }
+  .footer p:nth-child(2) {
+    margin-top: 10px;
   }
 }
 

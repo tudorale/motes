@@ -17,10 +17,14 @@
 @media only screen and (max-width: 550px){
     .footer{
         padding: 0 10px;
-        padding-bottom: 10px;
         padding-top: 30px;
         flex-direction: column;
         height: 70px;
+        margin-bottom: 15px;
+    }
+
+    .footer p:nth-child(2){
+        margin-top: 10px;
     }
   
 }
