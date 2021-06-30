@@ -162,6 +162,27 @@
   margin-left: 5px;
 }
 
+.about {
+  position: relative;
+  top: 90px;
+  width: 90%;
+  left: 25px;
+}
+
+.about h1 {
+  font-size: 1.8rem;
+}
+
+.about p {
+  margin-top: 10px;
+  margin-bottom: 15px;
+  font-size: 1.15rem;
+}
+
+.about .note {
+  color: #b4b4b4;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -172,6 +193,7 @@
 
 body {
   background: #04030f;
+  color: white;
 }
 
 .main .content {

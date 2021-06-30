@@ -1,12 +1,13 @@
 import React from 'react'
 import "../../style/css/main.css"
+import {Link} from "react-router-dom";
 
 function Navbar() {
     return (
         <div className="navbar">
-            <a href="/"><h1 className="logo"><span>M</span>otes</h1></a>
+            <Link to="/"><h1 className="logo"><span>M</span>otes</h1></Link>
             <ul>
-                <li><a href="/">About Motes</a></li>
+                <li><Link to="/about">About Motes</Link></li>
                 <li><a href="https://tudorale.github.io/portfolio/" target="_blank" rel="noreferrer">Creator</a></li>
             </ul>
         </div>

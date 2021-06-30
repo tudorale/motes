@@ -1,0 +1,17 @@
+.about{
+    position: relative;
+    top: 90px;
+    width:90%;
+    left: 25px;
+    h1{
+        font-size: 1.8rem;
+    }
+    p{
+        margin-top: 10px;
+        margin-bottom: 15px;
+        font-size: 1.15rem;
+    }
+    .note{
+        color: $grey-color;
+    }
+}

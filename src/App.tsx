@@ -3,6 +3,7 @@ import "./style/css/main.css";
 import { HashRouter as Router, Route, Switch } from "react-router-dom";
 import Main from "./components/Main"
 import Mote from "./components/Mote"
+import About from "./components/About"
 
 function App() {
   
@@ -13,6 +14,8 @@ function App() {
           <Switch>
             <Route path="/" exact component={Main} />
             <Route path="/mote/:key" exact component={Mote} />
+            <Route path="/about" exact component={About} />
+
           </Switch>
         </Router>
       </div>
