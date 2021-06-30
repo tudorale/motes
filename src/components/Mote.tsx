@@ -29,9 +29,9 @@ function Mote(props: any) {
             db.collection("motes").doc(key).update({
                 title: title,
             })
-        }, 1000);
+        }, 500);
         return () => clearTimeout(timeout);
-    }, [title]);
+    }, [title, key]);
 
     const handleNotes = (e: any) => {
         setNotes(e.target.value);
@@ -42,9 +42,9 @@ function Mote(props: any) {
             db.collection("motes").doc(key).update({
                 notes: notes,
             })
-        }, 1000);
+        }, 500);
         return () => clearTimeout(timeout);
-    }, [notes]);
+    }, [notes, key]);
 
     const handleEditIcon = (input: string) => {
         let i = document.querySelector(`${input}`) as HTMLElement;
@@ -57,8 +57,10 @@ function Mote(props: any) {
                 <title>Motes | {title}</title>  
             </Helmet>
 
+            <Navbar/>
+
             <div className="moteWrapper">
-                <Navbar/>
+                
 
                 <div className="moteContent">
                     <div className="titleWrapper">

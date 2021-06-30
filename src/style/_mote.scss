@@ -21,7 +21,7 @@
             svg{
                 fill: white;
                 position: relative;
-                top: 5px;
+                top: 7px;
                 cursor: pointer;
             }
         }
@@ -82,5 +82,25 @@
             }
             
         }
+    }
+}
+
+@media only screen and (max-width: 850px){
+    .moteWrapper .moteContent{
+        width: 95%;
+        padding-right: 20px;
+    }
+
+    .moteWrapper .moteContent #notes{
+        width: 100%;
+        max-width: 100%;
+        min-width: 100%;
+    }
+
+}
+
+@media only screen and (max-width: 550px){
+    .moteWrapper .moteContent{
+        left: 10px;
     }
 }

@@ -120,7 +120,7 @@
 .moteWrapper .moteContent .titleWrapper svg {
   fill: white;
   position: relative;
-  top: 5px;
+  top: 7px;
   cursor: pointer;
 }
 
@@ -182,6 +182,24 @@
 .moteWrapper .moteContent .moteInfo p span {
   color: #5900ff;
   margin-left: 5px;
+}
+
+@media only screen and (max-width: 850px) {
+  .moteWrapper .moteContent {
+    width: 95%;
+    padding-right: 20px;
+  }
+  .moteWrapper .moteContent #notes {
+    width: 100%;
+    max-width: 100%;
+    min-width: 100%;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .moteWrapper .moteContent {
+    left: 10px;
+  }
 }
 
 .about {
