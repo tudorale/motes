@@ -22,17 +22,29 @@ function Mote(props: any) {
 
     const handleTitle = (e: any) => {
         setTitle(e.target.value)
-        db.collection("motes").doc(key).update({
-            title: e.target.value,
-        })
     }
+
+    useEffect(() => {
+        const timeout = setTimeout(() => {
+            db.collection("motes").doc(key).update({
+                title: title,
+            })
+        }, 1000);
+        return () => clearTimeout(timeout);
+    }, [title]);
 
     const handleNotes = (e: any) => {
         setNotes(e.target.value);
-        db.collection("motes").doc(key).update({
-            notes: e.target.value,
-        })
     }
+
+    useEffect(() => {
+        const timeout = setTimeout(() => {
+            db.collection("motes").doc(key).update({
+                notes: notes,
+            })
+        }, 1000);
+        return () => clearTimeout(timeout);
+    }, [notes]);
 
     const handleEditIcon = (input: string) => {
         let i = document.querySelector(`${input}`) as HTMLElement;
