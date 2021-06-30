@@ -13,3 +13,14 @@
         text-decoration: none;
     }
 }
+
+@media only screen and (max-width: 550px){
+    .footer{
+        padding: 0 10px;
+        padding-bottom: 10px;
+        padding-top: 30px;
+        flex-direction: column;
+        height: 70px;
+    }
+  
+}

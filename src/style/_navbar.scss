@@ -15,7 +15,7 @@
         }
     }
     ul{
-        width: 240px;
+        width: 170px;
         position: absolute;
         right: 0;
         list-style: none;
@@ -24,7 +24,7 @@
         flex-direction: row;
         font-size: 1.2rem;
         padding: 10px;
-        padding-top: 17px;
+        padding-top: 20px;
         margin-right: 25px;
         li a{
             color: white;
@@ -32,5 +32,15 @@
             text-decoration: none;
             &:hover{color: $main-color;}
         }
+    }
+}
+
+@media only screen and (max-width: 550px){
+    .navbar a .logo{
+        margin-left: 0px;
+    }
+
+    .navbar ul{
+        margin-right: 5px;
     }
 }

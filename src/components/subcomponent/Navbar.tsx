@@ -7,7 +7,7 @@ function Navbar() {
         <div className="navbar">
             <Link to="/"><h1 className="logo"><span>M</span>otes</h1></Link>
             <ul>
-                <li><Link to="/about">About Motes</Link></li>
+                <li><Link to="/about">About</Link></li>
                 <li><a href="https://tudorale.github.io/portfolio/" target="_blank" rel="noreferrer">Creator</a></li>
             </ul>
         </div>
