@@ -1,10 +1,14 @@
 import React from 'react'
 import Navbar from './subcomponent/Navbar'
 import "../style/css/main.css";
+import Helmet from "react-helmet";
 
 function About() {
     return (
         <>
+            <Helmet>
+                <title>Motes | About Motes</title>  
+            </Helmet>
             <Navbar /> 
                 <div className="about">
                     <h1>What is "Motes"</h1>

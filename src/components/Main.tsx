@@ -5,6 +5,7 @@ import Footer from './subcomponent/Footer';
 import {useHistory} from "react-router-dom"
 import {db} from "./services/Firebase";
 import firebase from "firebase/app";
+import Helmet from "react-helmet";
 
 function Main() {
     const [key, setKey] = useState<string>("");
@@ -84,25 +85,30 @@ function Main() {
     }
 
     return (
-        <div className="main">
-            <Navbar/>
+        <>
+            <Helmet>
+                <title>Motes | Access your notes from everywhere</title>  
+            </Helmet>
+            <div className="main">
+                <Navbar/>
 
-            <div className="content">
-                <h1>Join or create a mote</h1>
-                <form onSubmit={(e) => handleMote(e)}>
-                    <div className="inputField">
-                        <label htmlFor="key" id="keylabel">Mote Key</label>
-                        <input type="text" id="key" maxLength={10} minLength={4} value={key} onChange={e => handleChange(e)} onFocus={() => handleFocus("#keylabel", "#key")} onBlur={() => handleBlur("#keylabel", "#key")}/>
-                    </div>
-                    <button id="actionButton">{buttonStatus}</button>
-                </form>
-                <p className="status">{status}</p>
-                <p className="note">* If a mote with that key doesn't exist, it will create one, if it exists it will join the mote.</p>
-                <p className="note" style={{marginTop: "15px"}}>* Choose a complex key for the mote, everyone who has the key from your mote can edit and view your notes.</p>
+                <div className="content">
+                    <h1>Join or create a mote</h1>
+                    <form onSubmit={(e) => handleMote(e)}>
+                        <div className="inputField">
+                            <label htmlFor="key" id="keylabel">Mote Key</label>
+                            <input type="text" id="key" maxLength={10} minLength={4} value={key} onChange={e => handleChange(e)} onFocus={() => handleFocus("#keylabel", "#key")} onBlur={() => handleBlur("#keylabel", "#key")}/>
+                        </div>
+                        <button id="actionButton">{buttonStatus}</button>
+                    </form>
+                    <p className="status">{status}</p>
+                    <p className="note">* If a mote with that key doesn't exist, it will create one, if it exists it will join the mote.</p>
+                    <p className="note" style={{marginTop: "15px"}}>* Choose a complex key for the mote, everyone who has the key from your mote can edit and view your notes.</p>
+                </div>
+
+                <Footer />
             </div>
-
-            <Footer />
-        </div>
+        </>
     )
 }
 
